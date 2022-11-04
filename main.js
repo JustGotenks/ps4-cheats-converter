@@ -20,7 +20,7 @@ const shnFilename = (shnStr) => {
   const creator = trainerEle.attributes['Moder'].value;
   const cusa = trainerEle.attributes['Cusa'].value;
   const version = trainerEle.attributes['Version'].value;
-  const FWv = '9.00';
+  const FWv = document.getElementById('fwv').value || '9.00';
   return `${game}_${cusa}_${version}_${creator}_${FWv}.shn`;
 }
 
@@ -33,7 +33,7 @@ const onlyHex = (str) => str.replaceAll(/[^a-zA-Z0-9]/g, '');
 
 
 const toSHN = (jsonObj, toSubOffset=false) => {
-  const genre = 'Adventure';
+  const genre = document.getElementById('genre').value || 'Adventure';
 
   let xmlStr =`<?xml version="1.0" encoding="utf-16"?>
 <Trainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Game="${jsonObj.name}" Moder="${jsonObj.credits.join(', ')}" Cusa="${jsonObj.id}" Version="${jsonObj.version}" Process="${jsonObj.process}">
@@ -207,3 +207,12 @@ shnButtonDL.onclick = () => {
   downloadLink.click();
   URL.revokeObjectURL(downloadLink.href);
 }
+
+
+const clear = (choice) => document.querySelector(`#${choice} textarea`).value = '';
+document.querySelector('#OG .clear button').onclick = () => clear('OG');
+document.querySelector('#GoldHEN .clear button').onclick = () => clear('GoldHEN');
+document.querySelector('#SHN .clear button').onclick = () => clear('SHN');
+document.querySelector('#GoldHEN .clearAll button').onclick = () => {
+  ['OG', 'GoldHEN', 'SHN'].forEach(choice => clear(choice));
+};

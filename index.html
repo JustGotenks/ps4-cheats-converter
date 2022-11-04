@@ -4,7 +4,81 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>PS4 Cheats Converter</title>
+</head>
+
+<body>
+  <div class="main-container">
+
+    <div id="OG">
+      <div class="type"><h2>Original Address</h2></div>
+      <textarea></textarea>
+
+      <div class="DL-line">
+        <button>Download</button>
+        <p></p>
+      </div>
+
+      <div class="convertTo">
+        <button id="OG-to-GoldHEN">to GoldHEN</button>
+        <button id="OG-to-both">both</button>
+        <button id="OG-to-SHN">to SHN</button>
+      </div>
+
+      <div class="clear"><button>Clear</button></div>
+    </div>
+
+
+    <div id="GoldHEN">
+      <div class="type"><h2>GoldHEN</h2></div>
+      <textarea></textarea>
+
+      <div class="DL-line">
+        <button>Download</button>
+        <p></p>
+      </div>
+
+      <div class="convertTo">
+        <button id="GoldHEN-to-OG">to original</button>
+        <button id="GoldHEN-to-both">both</button>
+        <button id="GoldHEN-to-SHN">toSHN</button>
+      </div>
+
+      <div class="clear"><button>Clear</button></div>
+      <div class="clearAll"><button>Clear All</button></div>
+    </div>
+
+
+    <div id="SHN">
+      <div class="type"><h2>SHN</h2></div>
+      <textarea></textarea>
+
+      <div class="DL-line">
+        <button>Download</button>
+        <p></p>
+      </div>
+
+      <div class="convertTo">
+        <button id="SHN-to-OG">to original</button>
+        <button id="SHN-to-both">both</button>
+        <button id="SHN-to-GoldHEN">to GoldHEN</button>
+      </div>
+
+      <div class="clear"><button>Clear</button></div>
+    </div>
+  </div>
+
+  <div id="info">
+    <div>
+      <p>Genre: <input type="text" placeholder="Adventure" id="genre"></p>
+    </div>
+    <div>
+      <p>Firmware version: <input type="text" placeholder="9.00" id="fwv"></p>
+    </div>
+  </div>
+
+  <div><p>Source: <pre>https://github.com/JustGotenks/ps4-cheats-converter</pre> (<a href="https://github.com/JustGotenks/ps4-cheats-converter">clickable link</a>)</p></div>
+
   <style>
     * {
       margin: 0;
@@ -26,12 +100,14 @@
       flex-direction: row;
       gap: 20px;
     }
-    .main-container > [id] {
+    .main-container > [id],
+    #info {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .main-container > [id] .convertTo {
+    .main-container > [id] .convertTo,
+    .main-container > [id] [class^='clear'] {
       align-self: center;
     }
     .type {
@@ -43,71 +119,6 @@
       align-items: center;
     }
   </style>
-</head>
-<body>
-  <div class="main-container">
-
-
-    <div id="OG">
-      <div class="type"><h2>Original Address</h2></div>
-
-      <textarea></textarea>
-
-      <div class="DL-line">
-        <button>Download</button>
-        <p></p>
-      </div>
-
-      <div class="convertTo">
-        <button id="OG-to-GoldHEN">to GoldHEN</button>
-        <button id="OG-to-both">both</button>
-        <button id="OG-to-SHN">to SHN</button>
-      </div>
-    </div>
-
-
-
-    <div id="GoldHEN">
-      <div class="type"><h2>GoldHEN</h2></div>
-
-      <textarea></textarea>
-
-      <div class="DL-line">
-        <button>Download</button>
-        <p></p>
-      </div>
-
-      <div class="convertTo">
-        <button id="GoldHEN-to-OG">to original</button>
-        <button id="GoldHEN-to-both">both</button>
-        <button id="GoldHEN-to-SHN">toSHN</button>
-      </div>
-    </div>
-
-
-
-    <div id="SHN">
-      <div class="type"><h2>SHN</h2></div>
-
-      <textarea></textarea>
-
-      <div class="DL-line">
-        <button>Download</button>
-        <p></p>
-      </div>
-
-      <div class="convertTo">
-        <button id="SHN-to-OG">to original</button>
-        <button id="SHN-to-both">both</button>
-        <button id="SHN-to-GoldHEN">to GoldHEN</button>
-      </div>
-    </div>
-  </div>
-
-
-  <div>
-    <h3>Don't forget to set the "Genre"</h3>
-  </div>
   <script src="./main.js"></script>
 </body>
 </html>
