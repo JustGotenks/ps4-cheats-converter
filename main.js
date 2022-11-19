@@ -118,6 +118,7 @@ const setSHN = (shnStr) => {
 
 const convertOG = (toType) => {
   const jsonObj = JSON.parse(document.querySelector('#OG textarea').value);
+  jsonObj.mods.forEach(cheat => delete cheat.hint);
   switch (toType) {
   case 'GoldHEN':
     setGoldHEN(changeJsonOffset(jsonObj));
